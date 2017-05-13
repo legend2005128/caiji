@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>企业信息查询</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .contanier{margin:50px 100px;}
+        table{margin: 20px 0;}
+        .item{text-align: right;width: 180px;}
+       /* .title{background: #F0F2DF;}*/
+        .formex img{cursor : pointer;width:150px;height:30px;}
+        .main{margin-top: 100px;}
+        caption{border: 1px solid #ddd;border-bottom: none;}
+        table {
+          width: 100%;
+          max-width: 100%;
+          margin-bottom: 20px;
+          border:1px solid #ddd;
+        }
+        table > thead > tr > th,
+        table > tbody > tr > th,
+        table > tfoot > tr > th,
+        table > thead > tr > td,
+        table > tbody > tr > td,
+        table > tfoot > tr > td {
+          padding: 8px;
+          line-height: 1.42857143;
+          vertical-align: top;
+          border-top: 1px solid #ddd;
+          border-right: 1px solid #ddd;
+        }
+        table > thead > tr > th {
+          vertical-align: bottom;
+        }
+        table > caption + thead > tr:first-child > th,
+        table > colgroup + thead > tr:first-child > th,
+        table > thead:first-child > tr:first-child > th,
+        table > caption + thead > tr:first-child > td,
+        table > colgroup + thead > tr:first-child > td,
+        table > thead:first-child > tr:first-child > td {
+          border-top: 0;
+        }
+        table > tbody + tbody {
+          border-top: 2px solid #ddd;
+        }
+        table .table {
+          background-color: #fff;
+        }
+        table-condensed > thead > tr > th,
+        table-condensed > tbody > tr > th,
+        table-condensed > tfoot > tr > th,
+        table-condensed > thead > tr > td,
+        table-condensed > tbody > tr > td,
+        table-condensed > tfoot > tr > td {
+          padding: 5px;
+        }
+        table-bordered {
+          border: 1px solid #ddd;
+        }
+        table-bordered > thead > tr > th,
+        table-bordered > tbody > tr > th,
+        table-bordered > tfoot > tr > th,
+        table-bordered > thead > tr > td,
+        table-bordered > tbody > tr > td,
+        table-bordered > tfoot > tr > td {
+          border: 1px solid #ddd;
+        }
+        table-bordered > thead > tr > th,
+        table-bordered > thead > tr > td {
+          border-bottom-width: 2px;
+        }
+        table-striped > tbody > tr:nth-of-type(odd) {
+          background-color: #f9f9f9;
+        }
+        table-hover > tbody > tr:hover {
+          background-color: #f5f5f5;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/handlebars.js/4.0.3/handlebars.min.js"></script>
+<body>
+    <div class="contanier">
+    <div class="bs-example bs-example-tabs">
+        <ul role="tablist" class="nav nav-tabs" id="myTab">
+            <li class="active" role="presentation"><a aria-expanded="false" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">基本信息</a></li>
+            <li role="presentation"><a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile" aria-expanded="true">风险信息</a></li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div aria-labelledby="home-tab" id="home" class="tab-pane fade  active in" role="tabpanel">
+                
+      <br/>
+	     <table cellspacing="0" cellpadding="0" class="detailsList" >
+	        <tr>
+	      	   <th colspan="4" style="text-align:center;">基本信息  </th>
+	      	</tr>
+	        <tr>
+	           <th width="20%">统一社会信用代码/注册号</th>
+	           <td width="30%">91210300MA0QCKLUX3
+	           </td>
+	           <th>名称</th>
+	           <td width="30%">长青网络科技有限公司</td>
+	        </tr>
+	        <tr>
+	           <th>类型</th>
+	           <td>有限责任公司(自然人投资或控股)</td>
+	           <th width="20%">法定代表人</th>
+	           <td>高攀</td>
+			</tr>
+	        <tr>        	
+	           <th>注册资本</th>
+	           <td>
+	           	5000
+	           	
+			  	
+			  		<span>万人民币</span>
+			  	
+	           </td>
+			   <th width="20%">成立日期</th>
+	           <td>2015年12月04日</td>      
+	        </tr>
+	        <tr>
+	           <th>住所</th>
+	           <td colspan="3">辽宁省鞍山市铁西区红旗西街85号</td>
+	        </tr>
+	        <tr>
+	           <th>营业期限自</th>
+	           <td>2015年12月04日</td>
+	           <th>营业期限至</th>
+	           <td>2045年12月03日</td>
+	        </tr>
+	        <tr>
+	           <th>经营范围<br/></th>
+	           <td colspan="3">数据处理、存储服务；固定电信服务；数据技术开发、技术推广、技术服务；开发、制作、测试互联网络系统操作软件及应用软件。（依法须经批准的项目，经相关部门批准后方可开展经营活动。）</td>
+	        </tr>
+			<tr>
+	           <th>登记机关</th>
+	           <td>鞍山市工商行政管理局</td>
+	           <th>核准日期</th>
+	           <td>2015年12月04日</td>
+	        </tr>
+	        <tr>
+	           <th>登记状态</th>
+	           <td>存续（在营、开业、在册）</td>
+	           <th>
+		            
+				  	
+			  		
+			  		
+				  	
+				  	
+	         	</th>
+	         	<td>
+	         		
+				  	
+			  			<span></span>
+			  		
+			  		
+				  	
+			  			<span></span>
+			  		
+	         	</td>
+	        </tr>
+	     </table>
+   
+
+	<table cellspacing="0" cellpadding="0" class="detailsList" >
+		<thead>
+			<tr>
+				<th colspan="5" style="text-align:center;">股东信息
+					<br/>
+					<h1 style="text-align:center;">股东的出资信息截止2014年1月1日，2014年1月1日之后工商只公示股东基本信息，其他出资信息由企业自主公示。</h1>
+				</th>
+			</tr>
+			<tr style="width:95%">
+				<th width="20%" style="text-align:center;">股东类型</th>
+				<th width="20%" style="text-align:center;">股东</th>
+				<th width="20%" style="text-align:center;">证照/证件类型</th>
+				<th width="20%" style="text-align:center;">证照/证件号码</th>
+				<th width="20%" style="text-align:center;">详情</th>
+			</tr>
+		</thead>
+		<tbody id="tzr_itemContainer"></tbody>
+			<tr id="tzr_pageTr">
+				<th colspan="5">
+				  	<div class="holder" id="tzr_holderDiv" ></div>
+				</th>
+			</tr>
+	       
+	</table>
+
+            </div>
+            <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade" role="tabpanel">
+                
+	<table cellspacing="0" cellpadding="0" class="detailsList" >
+		<thead>
+			<tr>
+				<th colspan="7" style="text-align:center;">行政处罚基本信息</th>
+			</tr>
+			<tr style="width:95%">
+				<th width="5%"style="text-align:center;">序号 </th>
+				<th width="10%"style="text-align:center;">行政处罚决定书文号</th>
+				<th width="20%"style="text-align:center;">违法行为类型</th>
+				<th width="10%"style="text-align:center;">行政处罚内容</th>
+			    <th width="10%"style="text-align:center;">作出行政处罚决定机关名称</th>
+				<th width="10%"style="text-align:center;">作出行政处罚决定日期</th>
+				<th width="10%"style="text-align:center;">状态</th>
+			</tr>
+		</thead>
+		<tbody id="xzcfItemContainer"></tbody>
+			<tr id="xzcfPageTr">
+				<th colspan="7">
+				  	<div class="holder" id="xzcfHolderDiv" ></div>
+				</th>
+			</tr>
+	       
+	</table>
+                
+	<table cellspacing="0" cellpadding="0" class="detailsList" >
+		<thead>
+			<tr>
+				<th colspan="6" style="text-align:center;">经营异常信息</th>
+			</tr>
+			<tr style="width:95%">
+				<th style="width:5%;text-align:center">序号</th>
+				<th style="width:25%;text-align:center">列入经营异常名录原因</th>
+				<th style="width:10%;text-align:center">列入日期</th>
+				<th style="width:27%;text-align:center">移出经营异常名录原因</th>
+				<th style="width:10%;text-align:center">移出日期</th>
+				<th style="width:10%;text-align:center">作出决定机关</th>
+			</tr>
+		</thead>
+		<tbody id="jyyc_itemContainer"></tbody>
+			<tr id="jyyc_pageTr">
+				<th colspan="6">
+				  	<div class="holder" id="jyyc_holderDiv" ></div>
+				</th>
+			</tr>
+	       
+	</table>
+                
+	<table cellspacing="0" cellpadding="0" class="detailsList" >
+		<thead>
+			<tr>
+				<th colspan="6" style="text-align:center;">严重违法信息</th>
+			</tr>
+			<tr style="width:95%">
+				<th style="width:5%;text-align:center">序号</th>
+				<th style="width:25%;text-align:center">列入严重违法企业名单原因</th>
+				<th style="width:13%;text-align:center">列入日期</th>
+				<th style="width:20%;text-align:center">移出严重违法企业名单原因</th>
+				<th style="width:13%;text-align:center">移出日期</th>
+				<th style="width:24%;text-align:center">作出决定机关</th>
+			</tr>
+		</thead>
+		<tbody id="yzwf_itemContainer"></tbody>
+			<tr id="yzwf_pageTr">
+				<th colspan="6">
+				  	<div class="holder" id="yzwf_holderDiv" ></div>
+				</th>
+			</tr>
+	       
+	</table>
+            </div>
+<p  class="active text-left" style="background: #f5f5f5;"><a href="http://local.caiji:83/liaoning">重新搜索</a></p>        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    var trs ='';
+                         trs +='<tr>'+'<td>自然人股东</td>'
+                                                        +  '<td>韩春志</td>'
+                                                        + ' <td>中华人民共和国居民身份证</td>'
+                                                        + '<td></td>'
+                                                        + '<td></td>'
+                                                        + '</tr>';
+                         trs +='<tr>'+'<td>自然人股东</td>'
+                                                        +  '<td>刘启伟</td>'
+                                                        + ' <td>中华人民共和国居民身份证</td>'
+                                                        + '<td></td>'
+                                                        + '<td></td>'
+                                                        + '</tr>';
+                         trs +='<tr>'+'<td>自然人股东</td>'
+                                                        +  '<td>高攀</td>'
+                                                        + ' <td>中华人民共和国居民身份证</td>'
+                                                        + '<td></td>'
+                                                        + '<td></td>'
+                                                        + '</tr>';
+           var jyyctrs ='';
+               var yzwftrs ='';
+//       
+    $(document).ready(function () {
+         $('#tzr_itemContainer').html(trs);
+          $('#jyyc_itemContainer').html(jyyctrs);
+        
+    })
+</script>
+
+<script>
+    function show(obj,url ){
+        obj.src = url +'?random='+Math.random() ;
+    }
+    $(function () {
+        /*标签切换*/
+        $('#myTab a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+    })
+    //查询按钮失效操作
+    $('.container').on('click',':submit',function(){
+         //$(this).attr('disabled','disabled');
+         $(this).val('搜索中...');
+    })
+</script>
+
+</body>
+</html>

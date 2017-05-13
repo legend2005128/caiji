@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>企业信息查询</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .contanier{margin:50px 100px;}
+        table{margin: 20px 0;}
+        .item{text-align: right;width: 180px;}
+       /* .title{background: #F0F2DF;}*/
+        .formex img{cursor : pointer;width:150px;height:30px;}
+        .main{margin-top: 100px;}
+        caption{border: 1px solid #ddd;border-bottom: none;}
+        table {
+          width: 100%;
+          max-width: 100%;
+          margin-bottom: 20px;
+          border:1px solid #ddd;
+        }
+        table > thead > tr > th,
+        table > tbody > tr > th,
+        table > tfoot > tr > th,
+        table > thead > tr > td,
+        table > tbody > tr > td,
+        table > tfoot > tr > td {
+          padding: 8px;
+          line-height: 1.42857143;
+          vertical-align: top;
+          border-top: 1px solid #ddd;
+          border-right: 1px solid #ddd;
+        }
+        table > thead > tr > th {
+          vertical-align: bottom;
+        }
+        table > caption + thead > tr:first-child > th,
+        table > colgroup + thead > tr:first-child > th,
+        table > thead:first-child > tr:first-child > th,
+        table > caption + thead > tr:first-child > td,
+        table > colgroup + thead > tr:first-child > td,
+        table > thead:first-child > tr:first-child > td {
+          border-top: 0;
+        }
+        table > tbody + tbody {
+          border-top: 2px solid #ddd;
+        }
+        table .table {
+          background-color: #fff;
+        }
+        table-condensed > thead > tr > th,
+        table-condensed > tbody > tr > th,
+        table-condensed > tfoot > tr > th,
+        table-condensed > thead > tr > td,
+        table-condensed > tbody > tr > td,
+        table-condensed > tfoot > tr > td {
+          padding: 5px;
+        }
+        table-bordered {
+          border: 1px solid #ddd;
+        }
+        table-bordered > thead > tr > th,
+        table-bordered > tbody > tr > th,
+        table-bordered > tfoot > tr > th,
+        table-bordered > thead > tr > td,
+        table-bordered > tbody > tr > td,
+        table-bordered > tfoot > tr > td {
+          border: 1px solid #ddd;
+        }
+        table-bordered > thead > tr > th,
+        table-bordered > thead > tr > td {
+          border-bottom-width: 2px;
+        }
+        table-striped > tbody > tr:nth-of-type(odd) {
+          background-color: #f9f9f9;
+        }
+        table-hover > tbody > tr:hover {
+          background-color: #f5f5f5;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/handlebars.js/4.0.3/handlebars.min.js"></script>
+<body>
+    <style>
+        th{text-align: center}
+        .info {text-align: left}
+</style>
+<div class="contanier">
+    <div class="bs-example bs-example-tabs">
+        <ul role="tablist" class="nav nav-tabs" id="myTab">
+            <li class="active" role="presentation"><a aria-expanded="false" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">基本信息</a></li>
+            <li role="presentation"><a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile" aria-expanded="true">风险信息</a></li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div aria-labelledby="home-tab" id="home" class="tab-pane fade  active in" role="tabpanel">
+                <table cellspacing="0"cellpadding="0"class="info m-bottom m-top"><col width="20%"/><col width="30%"/><col width="20%"/><col width="30%"/><tr><th colspan="4">基本信息</th></tr><tr><th class="right">注册号/<br>统一社会信用代码</th><td>91310000342461843D</td><th class="right">名称</th><td>上海兴龙游艺有限公司第三分公司</td></tr><tr><th class="right">类型</th><td>有限责任公司分公司</td><th class="right">负责人</th><td>茹福贵</td></tr><tr><th class="right">营业场所</th><td colspan="3">中国（上海）自由贸易试验区创新西路795号3幢101室A座</td></tr><tr><th class="right">营业期限自</th><td></td><th class="right">营业期限至</th><td></td></tr><tr><th class="right">经营范围</th><td colspan="3">自行车、电动游船、自有设备租赁（不得从事金融租赁）。【依法须经批准的项目，经相关部门批准后方可开展经营活动】</td></tr><tr><th class="right">登记机关</th><td>自贸区市场监督管理局</td><th class="right">核准日期</th><td>2014年8月26日</td></tr><tr><th class="right">成立日期</th><td>2014年8月26日</td><th class="right">登记状态</th><td>存续（在营、开业、在册）</td></tr></table><table id="alterTable"cellspacing="0"cellpadding="0"class="info m-bottom m-top"><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/><tr><th colspan="4">变更信息</th></tr><tr><th>变更事项</th><th>变更前内容</th><th>变更后内容</th><th>变更日期</th></tr><tr><th colspan="4"class="page-container"></th></tr></table>                            </div>
+            <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade" role="tabpanel">
+                <table id="punishTable"cellspacing="0"cellpadding="0"class="info m-bottom m-top"><col width="5%"/><col width="15%"/><col width="25%"/><col width="10%"/><col width="20%"/><col width="15%"/><col width="10%"/><tr><th colspan="7">行政处罚信息</th></tr><tr><th>序号</th><th>行政处罚<br/>决定书文号</th><th>违法行为类型</th><th>行政处罚内容</th><th>作出行政处罚<br/>决定机关名称</th><th>作出行政处罚<br/>决定日期</th><th>详情</th></tr><tr><th colspan="7"rel="20"class="page-container"></th></tr></table>                <table id="exceptTable"cellspacing="0"cellpadding="0"class="info m-bottom m-top"><col width="5%"/><col width="25%"/><col width="15%"/><col width="25%"/><col width="15%"/><col width="15%"/><tr><th colspan="6">经营异常信息</th></tr><tr><th>序号</th><th>列入经营异常名录原因</th><th>列入日期</th><th>移出经营异常名录原因</th><th>移出日期</th><th>作出决定机关</th></tr><tr><th colspan="6"rel="10"class="page-container"></th></tr></table>                            </div>
+              <p  class="active text-left" style="background: #f5f5f5;"><a href="http://local.caiji:83/shanghai">重新搜索</a></p>        </div>
+    </div>
+</div>
+
+
+<script>
+    function show(obj,url ){
+        obj.src = url +'?random='+Math.random() ;
+    }
+    $(function () {
+        /*标签切换*/
+        $('#myTab a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+    })
+    //查询按钮失效操作
+    $('.container').on('click',':submit',function(){
+         //$(this).attr('disabled','disabled');
+         $(this).val('搜索中...');
+    })
+</script>
+
+</body>
+</html>

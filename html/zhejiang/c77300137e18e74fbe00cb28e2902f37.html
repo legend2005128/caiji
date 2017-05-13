@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>企业信息查询</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .contanier{margin:50px 100px;}
+        table{margin: 20px 0;}
+        .item{text-align: right;width: 180px;}
+       /* .title{background: #F0F2DF;}*/
+        .formex img{cursor : pointer;width:150px;height:30px;}
+        .main{margin-top: 100px;}
+        caption{border: 1px solid #ddd;border-bottom: none;}
+        table {
+          width: 100%;
+          max-width: 100%;
+          margin-bottom: 20px;
+          border:1px solid #ddd;
+        }
+        table > thead > tr > th,
+        table > tbody > tr > th,
+        table > tfoot > tr > th,
+        table > thead > tr > td,
+        table > tbody > tr > td,
+        table > tfoot > tr > td {
+          padding: 8px;
+          line-height: 1.42857143;
+          vertical-align: top;
+          border-top: 1px solid #ddd;
+          border-right: 1px solid #ddd;
+        }
+        table > thead > tr > th {
+          vertical-align: bottom;
+        }
+        table > caption + thead > tr:first-child > th,
+        table > colgroup + thead > tr:first-child > th,
+        table > thead:first-child > tr:first-child > th,
+        table > caption + thead > tr:first-child > td,
+        table > colgroup + thead > tr:first-child > td,
+        table > thead:first-child > tr:first-child > td {
+          border-top: 0;
+        }
+        table > tbody + tbody {
+          border-top: 2px solid #ddd;
+        }
+        table .table {
+          background-color: #fff;
+        }
+        table-condensed > thead > tr > th,
+        table-condensed > tbody > tr > th,
+        table-condensed > tfoot > tr > th,
+        table-condensed > thead > tr > td,
+        table-condensed > tbody > tr > td,
+        table-condensed > tfoot > tr > td {
+          padding: 5px;
+        }
+        table-bordered {
+          border: 1px solid #ddd;
+        }
+        table-bordered > thead > tr > th,
+        table-bordered > tbody > tr > th,
+        table-bordered > tfoot > tr > th,
+        table-bordered > thead > tr > td,
+        table-bordered > tbody > tr > td,
+        table-bordered > tfoot > tr > td {
+          border: 1px solid #ddd;
+        }
+        table-bordered > thead > tr > th,
+        table-bordered > thead > tr > td {
+          border-bottom-width: 2px;
+        }
+        table-striped > tbody > tr:nth-of-type(odd) {
+          background-color: #f9f9f9;
+        }
+        table-hover > tbody > tr:hover {
+          background-color: #f5f5f5;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/handlebars.js/4.0.3/handlebars.min.js"></script>
+<body>
+    <div class="contanier">
+    <div class="bs-example bs-example-tabs">
+        <ul role="tablist" class="nav nav-tabs" id="myTab">
+            <li class="active" role="presentation"><a aria-expanded="false" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">基本信息</a></li>
+            <li role="presentation"><a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile" aria-expanded="true">风险信息</a></li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div aria-labelledby="home-tab" id="home" class="tab-pane fade  active in" role="tabpanel">
+                  <table class="table table-bordered " id="table">
+                   <tr><th colspan="4"style="text-align: center;">基本信息</th></tr><tr><th width="20%">统一社会信用代码/注册号</th><td width="30%">330382606210428</td><th>名称</th><td width="30%">乐清市柳市淘宝阁贸易商行</td></tr><tr><th>类型</th><td>个体工商户</td><th width="20%">经营者</th><td>蔡余平</td></tr><!-- 住所 --><tr><th>经营场所</th><td colspan="3">乐清市柳市镇柳青北路74号</td></tr><!-- 个体户 --><tr><th>组成形式</th><td>个人经营</td><th>注册日期</th><td>Wed Apr 02 00:00:00 CST 2014</td></tr><!-- 外资和个体户 --><tr><th>经营范围<br /></th><td colspan="3">日用品、家电、数码产品零售；废旧物资回收（不含危险废物和生产性废旧金属回收）；家电维修服务</td></tr><tr><th>登记机关</th><td>乐清市工商行政管理局</td><th>核准日期</th><td>Thu Apr 09 00:00:00 CST 2015</td></tr><!-- 非个人独资企业,外商合伙,外资从事经营生产 --><tr><th>登记状态</th><td>存续</td><th></th><td></td></tr><!-- 吊销时间 --> 
+                </table>
+                 <table class="table table-bordered " id="table_gd">
+                <table cellpadding="0"cellspacing="0"class="detailsList"><tr width="95%"><th colspan="4"style="text-align: center;">变更信息</th></tr><tr><th width="15%"style="text-align: center;">变更事项</th><th width="25%"style="text-align: center;">变更前内容</th><th width="25%"style="text-align: center;">变更后内容</th><th width="10%"style="text-align: center;">变更日期</th></tr><tr><td >经营范围(业务范围)变更</td><td><span id="lessDetailBefore1"style="display: block;"> 经营范围: 日用品、家电、数码产品零 <a href="javascript:void(0);"onclick="doMoreBefore(1);return false"></a></span><span id="moreDetailBefore1"style="display: none;"> 经营范围: 日用品、家电、数码产品零售 <a href="javascript:void(0);"onclick="doLessBefore(1);return false">收起</a></span></td><td><span id="lessDetailAfter1"style="display: block;"> 经营范围: 日用品、家电、数码产品零售； <a href="javascript:void(0);"onclick="doMoreAfter(1);return false"></a></span><span id="moreDetailAfter1"style="display: none;"> 经营范围: 日用品、家电、数码产品零售；废旧物资回收（不含危险废物和生产性废旧金属回收）；家电维修服务 <a href="javascript:void(0);"onclick="doLessAfter(1);return false">收起</a></span></td><td style="text-align: center">Thu Apr 09 00:00:00 CST 2015</td></tr><tr><td >一般经营项目变更</td><td><span id="lessDetailBefore2"style="display: block;"> 一般经营项目: 日用品、家电、数码产品零 <a href="javascript:void(0);"onclick="doMoreBefore(2);return false"></a></span><span id="moreDetailBefore2"style="display: none;"> 一般经营项目: 日用品、家电、数码产品零售 <a href="javascript:void(0);"onclick="doLessBefore(2);return false">收起</a></span></td><td><span id="lessDetailAfter2"style="display: block;"> 一般经营项目: 日用品、家电、数码产品零 <a href="javascript:void(0);"onclick="doMoreAfter(2);return false"></a></span><span id="moreDetailAfter2"style="display: none;"> 一般经营项目: 日用品、家电、数码产品零售；废旧物资回收（不含危险废物和生产性废旧金属回收）；家电维修服务 <a href="javascript:void(0);"onclick="doLessAfter(2);return false">收起</a></span></td><td style="text-align: center">Thu Apr 09 00:00:00 CST 2015</td></tr></table>                </table>
+            </div>
+            <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade" role="tabpanel">
+                <table class="table table-bordered " id="table_chufa">
+                    <tr style="width:939px"><th colspan="7"style="text-align: center;">行政处罚信息</th></tr><tr style="width:939px"><th width="5%"style="text-align: center;">序号</th><th width="13%"style="text-align: center;">行政处罚<br>决定书文号</th><th width="15%"style="text-align: center;">违法行为类型</th><th width="15%"style="text-align: center;">行政处罚内容</th><th width="11%"style="text-align: center;">作出行政处罚<br>决定机关名称</th><th width="10%"style="text-align: center;">作出行政处罚<br>决定日期</th><th width="5%"style="text-align: center;">详情</th></tr><tr style="width: 939px"><td colspan="7"style="text-align: center;">此企业暂无行政处罚信息</td></tr> 
+                </table>
+                <table class="table table-bordered " id="table_jyyc">
+                    <tr style="width:939px"><th colspan="6"style="text-align: center;">经营异常信息</th></tr><tr><th width="5%"style="text-align: center;">序号</th><th width="25%"style="text-align: center;">列入经营异常名录原因</th><th width="15%"style="text-align: center;">列入日期</th><th width="25%"style="text-align: center;">移出经营异常名录原因</th><th width="15%"style="text-align: center;">移出日期</th><th width="15%"style="text-align: center;">作出决定机关</th></tr><tr><td colspan="6"style="text-align: center;">此企业暂无经营异常信息</td></tr> 
+                </table>
+                 <table class="table table-bordered " id="table_yzwf">
+                     
+                </table>
+            </div>
+            <p  class="active text-left" style="background: #f5f5f5;"><a href="http://local.caiji:83/zhejiang">重新搜索</a></p>        </div>
+    </div>
+</div>
+
+
+<script>
+    function show(obj,url ){
+        obj.src = url +'?random='+Math.random() ;
+    }
+    $(function () {
+        /*标签切换*/
+        $('#myTab a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+    })
+    //查询按钮失效操作
+    $('.container').on('click',':submit',function(){
+         //$(this).attr('disabled','disabled');
+         $(this).val('搜索中...');
+    })
+</script>
+
+</body>
+</html>

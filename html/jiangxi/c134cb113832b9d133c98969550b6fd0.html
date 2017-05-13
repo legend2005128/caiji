@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>企业信息查询</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .contanier{margin:50px 100px;}
+        table{margin: 20px 0;}
+        .item{text-align: right;width: 180px;}
+       /* .title{background: #F0F2DF;}*/
+        .formex img{cursor : pointer;width:150px;height:30px;}
+        .main{margin-top: 100px;}
+        caption{border: 1px solid #ddd;border-bottom: none;}
+        table {
+          width: 100%;
+          max-width: 100%;
+          margin-bottom: 20px;
+          border:1px solid #ddd;
+        }
+        table > thead > tr > th,
+        table > tbody > tr > th,
+        table > tfoot > tr > th,
+        table > thead > tr > td,
+        table > tbody > tr > td,
+        table > tfoot > tr > td {
+          padding: 8px;
+          line-height: 1.42857143;
+          vertical-align: top;
+          border-top: 1px solid #ddd;
+          border-right: 1px solid #ddd;
+        }
+        table > thead > tr > th {
+          vertical-align: bottom;
+        }
+        table > caption + thead > tr:first-child > th,
+        table > colgroup + thead > tr:first-child > th,
+        table > thead:first-child > tr:first-child > th,
+        table > caption + thead > tr:first-child > td,
+        table > colgroup + thead > tr:first-child > td,
+        table > thead:first-child > tr:first-child > td {
+          border-top: 0;
+        }
+        table > tbody + tbody {
+          border-top: 2px solid #ddd;
+        }
+        table .table {
+          background-color: #fff;
+        }
+        table-condensed > thead > tr > th,
+        table-condensed > tbody > tr > th,
+        table-condensed > tfoot > tr > th,
+        table-condensed > thead > tr > td,
+        table-condensed > tbody > tr > td,
+        table-condensed > tfoot > tr > td {
+          padding: 5px;
+        }
+        table-bordered {
+          border: 1px solid #ddd;
+        }
+        table-bordered > thead > tr > th,
+        table-bordered > tbody > tr > th,
+        table-bordered > tfoot > tr > th,
+        table-bordered > thead > tr > td,
+        table-bordered > tbody > tr > td,
+        table-bordered > tfoot > tr > td {
+          border: 1px solid #ddd;
+        }
+        table-bordered > thead > tr > th,
+        table-bordered > thead > tr > td {
+          border-bottom-width: 2px;
+        }
+        table-striped > tbody > tr:nth-of-type(odd) {
+          background-color: #f9f9f9;
+        }
+        table-hover > tbody > tr:hover {
+          background-color: #f5f5f5;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/handlebars.js/4.0.3/handlebars.min.js"></script>
+<body>
+    <div class="contanier">
+    <div class="bs-example bs-example-tabs">
+        <ul role="tablist" class="nav nav-tabs" id="myTab">
+            <li class="active" role="presentation"><a aria-expanded="false" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">基本信息</a></li>
+            <li role="presentation"><a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile" aria-expanded="true">风险信息</a></li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div aria-labelledby="home-tab" id="home" class="tab-pane fade  active in" role="tabpanel">
+                <table class="table table-bordered " id="table">
+                    <tbody>
+                        <tr class="item">
+                            <td id="REGNOS">统一社会信用代码/注册号：360103210108760</td>
+                            <td><span>·企业名称：</span><span id="ENTNAME">南昌领领网络科技有限公司</span></td>
+                        </tr>
+                        <tr class="item">
+                            <td><span>·类型：</span><span id="ENTTYPE_CN">有限责任公司(自然人投资或控股)</span></td>
+                            <td><span>法人·</span><span id="NAME">晏顺和</span></td>
+                        </tr>
+                        <tr class="item">
+                            <td><span>·注册资本：</span><span id="REGCAP">10</span></td>
+                            <td><span>·成立日期：</span><span id="ESTDATE">2016年09月28日</span></td>
+                        </tr>
+                        <tr class="item">
+                            <td colspan="2"><span>·住所：</span><span id="DOM">江西省南昌市南昌市西湖区赣抚西堤龙韵大厦（龙韵花园）A座一层东区287室</span></td>
+                        </tr>
+                        <tr class="item">
+                            <td><span>·营业期限自：</span><span id="OPFROM">2016年09月28日</span></td>
+                            <td><span>·营业期限至：</span><span id="OPTO"> </span></td>
+                        </tr>
+                        <tr class="item">
+                            <td colspan="2"><span>·经营范围：</span><span id="OPSCOPE">计算机领域内的技术开发、技术咨询、技术服务、技术转让；计算机软件开发及销售；计算机系统集成；网络工程；企业管理咨询、企业形象策划；市场营销策划；国内广告的设计、制作、发布、代理；电脑图文设计、制作；会展服务；计算机硬件、服饰鞋帽、皮革制品、日用百货、珠宝首饰的销售；网上贸易代理（以上项目依法须经批准的项目，经相关部门批准后方可开展经营活动）**</span></td>
+                        </tr>
+                        <tr class="item">
+                            <td><span>·登记机关：</span><span id="REGORG_CN">南昌市西湖区市场和质量监督管理局</span></td>
+                            <td><span>·核准日期：</span><span id="APPRDATE">2016年09月28日</span></td>
+                        </tr>
+                        <tr class="item">
+                            <td colspan="2"><span>·登记状态：</span><span id="REGSTATE_CN">开业</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-bordered " id="table_gd">
+                    <thead>
+                        <tr class="title">
+                            <th colspan="5" class="text-center" >股东（发起人) 信息</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="item" >股东/发起人类型</th>
+                            <th class="item">股东/发起人</th>
+                            <th class="item">证照/证件类型</th>
+                            <th class="item">证照/证件号码</th>
+                        </tr>
+                                                    <tr>
+                                <td class="item">非农民自然人</td>
+                                <td class="item">晏顺和</td>
+                                <td class="item">中华人民共和国居民身份证</td>
+                                <td class="item">***</td>
+                            </tr>
+                                                    <tr>
+                                <td class="item">非农民自然人</td>
+                                <td class="item">黎美英</td>
+                                <td class="item">中华人民共和国居民身份证</td>
+                                <td class="item">***</td>
+                            </tr>
+                                            </tbody>
+                </table>
+            </div>
+            <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade" role="tabpanel">
+                <table class="table table-bordered " id="table_chufa">
+                    <thead>
+                        <tr class="title">
+                            <th class="text-center" colspan="6">行政处罚信息</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>行政处罚决定书文号</td>
+                            <td>违法行为类型</td>
+                            <td>行政处罚内容</td>
+                            <td>作出行政处罚<br/>决定机关名称</td>
+                            <td>作出行政处罚决定日期</td>
+                            <td>公示日期</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-bordered " id="table_jyyc">
+                    <thead>
+                        <tr class="title">
+                            <th colspan="5" class="text-center">经营异常信息</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th  class="item">列入经营异常名录原因</th>
+                            <th  class="item">列入日期</th>
+                            <th  class="item">移出经营异常名录原因</th>
+                            <th  class="item">移出日期</th>
+                            <th  class="item">作出决定机关</th>
+                        </tr>
+                         <div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: jyyc</p>
+<p>Filename: jiangxi/template.php</p>
+<p>Line Number: 98</p>
+
+</div><div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: jiangxi/template.php</p>
+<p>Line Number: 98</p>
+
+</div>                    </tbody>
+                </table>
+                <table class="table table-bordered " id="table_yzwf">
+                    <thead>
+                        <tr class="title">
+                            <th colspan="6" class="text-center" >严重违法失信信息</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr width="100%">
+                            <th class="item">列入严重违法失信企业名单原因</th>
+                            <th class="item">列入日期</th>
+                            <th class="item">作出列入决定机关</th>
+                            <th class="item">移出严重违法失信企业名单原因</th>
+                            <th class="item">移出日期</th>
+                            <th class="item">作出移出决定机关</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p  class="active text-left" style="background: #f5f5f5;"><a href="http://local.caiji:83/jiangxi">重新搜索</a></p>        </div>
+    </div>
+</div>
+
+<script>
+    function show(obj,url ){
+        obj.src = url +'?random='+Math.random() ;
+    }
+    $(function () {
+        /*标签切换*/
+        $('#myTab a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+    })
+    //查询按钮失效操作
+    $('.container').on('click',':submit',function(){
+         //$(this).attr('disabled','disabled');
+         $(this).val('搜索中...');
+    })
+</script>
+
+</body>
+</html>
